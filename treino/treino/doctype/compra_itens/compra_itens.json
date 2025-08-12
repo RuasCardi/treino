@@ -10,13 +10,16 @@
   "descricao",
   "valor_unitario",
   "quantidade",
-  "valor_total"
+  "valor_total",
+  "quantidade_em_estoque",
+  "valor_pago",
+  "parcelas",
+  "valor_parcelado"
  ],
  "fields": [
   {
    "fieldname": "item",
    "fieldtype": "Link",
-   "formula_execution_mode": "Always",
    "in_list_view": 1,
    "label": "Item",
    "options": "Item",
@@ -25,9 +28,9 @@
   {
    "default": "0",
    "fetch_from": "item.valor",
+   "fetch_if_empty": 1,
    "fieldname": "valor_unitario",
    "fieldtype": "Currency",
-   "formula_execution_mode": "Always",
    "in_list_view": 1,
    "label": "Valor Un.",
    "precision": "2",
@@ -37,7 +40,6 @@
    "default": "1",
    "fieldname": "quantidade",
    "fieldtype": "Int",
-   "formula_execution_mode": "Always",
    "in_list_view": 1,
    "label": "Quantidade",
    "precision": "4",
@@ -46,7 +48,6 @@
   {
    "fieldname": "valor_total",
    "fieldtype": "Currency",
-   "formula_execution_mode": "Always",
    "in_list_view": 1,
    "label": "Valor Total",
    "precision": "2",
@@ -56,15 +57,44 @@
    "fetch_from": "item.descricao",
    "fieldname": "descricao",
    "fieldtype": "Data",
-   "formula_execution_mode": "Always",
    "label": "Descri\u00e7\u00e3o"
+  },
+  {
+   "fetch_from": "item.quantidade_em_estoque",
+   "fetch_if_empty": 1,
+   "fieldname": "quantidade_em_estoque",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Em estoque",
+   "print_hide": 1,
+   "read_only": 1,
+   "report_hide": 1
+  },
+  {
+   "fieldname": "valor_pago",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Valor Pago",
+   "precision": "2"
+  },
+  {
+   "fieldname": "parcelas",
+   "fieldtype": "Select",
+   "label": "Parecelas",
+   "options": "1\n2\n3\n4"
+  },
+  {
+   "fieldname": "valor_parcelado",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Valor Parcelado"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-07-20 20:01:32.235428",
+ "modified": "2025-08-08 08:35:50.927052",
  "modified_by": "Administrator",
  "module": "Treino",
  "name": "compra_itens",

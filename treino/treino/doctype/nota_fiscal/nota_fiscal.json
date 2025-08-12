@@ -1,0 +1,139 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "NF-.######",
+ "creation": "2025-08-07 11:32:26.825221",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_1520",
+  "compra_ref",
+  "cliente",
+  "documento",
+  "section_break_fgqs",
+  "tabela_itens",
+  "section_break_rlyv",
+  "total_de_itens",
+  "column_break_ufzg",
+  "valor_total",
+  "parcelas",
+  "valor_parcela",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_1520",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Nota Fiscal",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_fgqs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "tabela_itens",
+   "fieldtype": "Table",
+   "label": "Tabela itens",
+   "options": "compra_itens"
+  },
+  {
+   "fieldname": "compra_ref",
+   "fieldtype": "Link",
+   "label": "Compra ref",
+   "no_copy": 1,
+   "options": "Compra",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "cliente",
+   "fieldtype": "Link",
+   "label": "Cliente",
+   "no_copy": 1,
+   "options": "Cliente",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "documento",
+   "fieldtype": "Link",
+   "label": "Documento",
+   "options": "Compra"
+  },
+  {
+   "fieldname": "section_break_rlyv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_de_itens",
+   "fieldtype": "Int",
+   "label": "Total de itens",
+   "options": "Compra",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ufzg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "valor_total",
+   "fieldtype": "Currency",
+   "label": "Valor Total ",
+   "read_only": 1
+  },
+  {
+   "fieldname": "parcelas",
+   "fieldtype": "Select",
+   "label": "Parcelas"
+  },
+  {
+   "fieldname": "valor_parcela",
+   "fieldtype": "Select",
+   "label": "Valor Parcela",
+   "no_copy": 1,
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-08-11 09:30:06.931633",
+ "modified_by": "Administrator",
+ "module": "Treino",
+ "name": "Nota Fiscal",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,77 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "ITEM_OC-.###",
+ "creation": "2025-07-30 15:53:58.161424",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_oc",
+  "qtde_oc",
+  "valor_pago",
+  "valor_de_estoque",
+  "lucro",
+  "valor_total"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_oc",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Oc",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "qtde_oc",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Qtde",
+   "reqd": 1
+  },
+  {
+   "fieldname": "lucro",
+   "fieldtype": "Percent",
+   "label": "% de Lucro",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "item_oc.valor",
+   "fieldname": "valor_de_estoque",
+   "fieldtype": "Currency",
+   "label": "Valor de Estoque",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "item_oc.valor_pago",
+   "fieldname": "valor_pago",
+   "fieldtype": "Currency",
+   "label": "Valor Pago",
+   "precision": "2"
+  },
+  {
+   "fieldname": "valor_total",
+   "fieldtype": "Currency",
+   "label": "Valor Total OC",
+   "precision": "2",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-08-05 10:46:55.820339",
+ "modified_by": "Administrator",
+ "module": "Treino",
+ "name": "item_ordem_de_compra",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

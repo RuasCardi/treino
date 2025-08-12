@@ -8,13 +8,15 @@
  "field_order": [
   "descricao",
   "valor",
-  "quantidade_em_estoque"
+  "quantidade_em_estoque",
+  "valor_pago",
+  "column_break_rtvg",
+  "parcelas"
  ],
  "fields": [
   {
    "fieldname": "descricao",
    "fieldtype": "Data",
-   "formula_execution_mode": "Always",
    "in_list_view": 1,
    "label": "Descri\u00e7\u00e3o",
    "reqd": 1
@@ -23,7 +25,6 @@
    "default": "0",
    "fieldname": "valor",
    "fieldtype": "Currency",
-   "formula_execution_mode": "Always",
    "in_list_view": 1,
    "label": "Valor",
    "precision": "2",
@@ -33,17 +34,34 @@
    "default": "1",
    "fieldname": "quantidade_em_estoque",
    "fieldtype": "Float",
-   "formula_execution_mode": "Always",
    "in_list_view": 1,
    "label": "Quantidade em estoque",
    "precision": "4",
    "reqd": 1
+  },
+  {
+   "fieldname": "valor_pago",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Valor Pago",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_rtvg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "parcelas",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Parcelas"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-20 16:58:18.779984",
+ "modified": "2025-08-08 08:12:23.353341",
  "modified_by": "Administrator",
  "module": "Treino",
  "name": "Item",
@@ -64,6 +82,7 @@
   }
  ],
  "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

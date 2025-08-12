@@ -7,24 +7,42 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_p2it",
-  "amended_from",
   "data_da_compra",
+  "cliente",
+  "documento",
+  "historico",
   "itens",
+  "section_break_eawv",
+  "valor_a",
+  "column_break_ycvt",
+  "valor_b",
+  "column_break_txfn",
+  "resultado",
+  "column_break_xtxo",
+  "valor_min",
+  "column_break_jwwc",
+  "valor_max",
+  "section_break_odaz",
+  "indice_a_column",
+  "linha_a",
+  "indice_b_column",
+  "linha_b",
   "section_break_uvhl",
   "total_de_itens",
   "column_break_hqdy",
-  "valor_total"
+  "valor_total",
+  "parcelas",
+  "valor_parcela",
+  "amended_from"
  ],
  "fields": [
   {
    "fieldname": "section_break_p2it",
-   "fieldtype": "Section Break",
-   "formula_execution_mode": "Always"
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "amended_from",
    "fieldtype": "Link",
-   "formula_execution_mode": "Always",
    "label": "Amended From",
    "no_copy": 1,
    "options": "Compra",
@@ -35,49 +53,156 @@
   {
    "fieldname": "data_da_compra",
    "fieldtype": "Datetime",
-   "formula_execution_mode": "Always",
    "in_list_view": 1,
    "label": "Data da Compra",
    "reqd": 1
   },
   {
-   "fieldname": "valor_total",
-   "fieldtype": "Currency",
-   "formula_execution_mode": "Always",
-   "label": "Valor Total (R$)",
-   "precision": "2",
+   "fieldname": "cliente",
+   "fieldtype": "Link",
+   "label": "Cliente",
+   "options": "Cliente"
+  },
+  {
+   "fieldname": "itens",
+   "fieldtype": "Table",
+   "label": "Itens da Compra",
+   "options": "compra_itens"
+  },
+  {
+   "fieldname": "section_break_eawv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "valor_a",
+   "fieldtype": "Float",
+   "label": "Valor A",
    "read_only": 1
   },
   {
-   "fieldname": "section_break_uvhl",
-   "fieldtype": "Section Break",
-   "formula_execution_mode": "Always"
+   "fieldname": "column_break_ycvt",
+   "fieldtype": "Column Break"
   },
   {
+   "default": "0",
+   "fieldname": "valor_b",
+   "fieldtype": "Float",
+   "label": "Valor B",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_txfn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "resultado",
+   "fieldtype": "Currency",
+   "label": "Resultado",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_xtxo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "valor_min",
+   "fieldtype": "Currency",
+   "label": "Valor minimo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_jwwc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "valor_max",
+   "fieldtype": "Currency",
+   "label": "Valor maximo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_odaz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "indice_a_column",
+   "fieldtype": "Column Break",
+   "label": "Indice A"
+  },
+  {
+   "fieldname": "linha_a",
+   "fieldtype": "Int",
+   "label": "Linha A"
+  },
+  {
+   "fieldname": "indice_b_column",
+   "fieldtype": "Column Break",
+   "label": "Indice B"
+  },
+  {
+   "fieldname": "linha_b",
+   "fieldtype": "Int",
+   "label": "Linha B"
+  },
+  {
+   "fieldname": "section_break_uvhl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
    "fieldname": "total_de_itens",
    "fieldtype": "Int",
-   "formula_execution_mode": "Always",
    "label": "Total de Itens",
    "read_only": 1
   },
   {
    "fieldname": "column_break_hqdy",
-   "fieldtype": "Column Break",
-   "formula_execution_mode": "Always"
+   "fieldtype": "Column Break"
   },
   {
-   "fieldname": "itens",
-   "fieldtype": "Table",
-   "formula_execution_mode": "Always",
-   "label": "Itens da Compra",
-   "options": "compra_itens"
+   "default": "0",
+   "fieldname": "valor_total",
+   "fieldtype": "Currency",
+   "label": "Valor Total (R$)",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "historico",
+   "fieldtype": "Button",
+   "label": "Historico",
+   "options": "Cliente"
+  },
+  {
+   "fieldname": "documento",
+   "fieldtype": "Data",
+   "label": "Documento",
+   "read_only": 1
+  },
+  {
+   "fieldname": "parcelas",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Parcelas",
+   "options": "1\n2\n3\n4"
+  },
+  {
+   "fieldname": "valor_parcela",
+   "fieldtype": "Currency",
+   "label": "Valor Parcela",
+   "precision": "2",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-20 17:12:06.119721",
+ "modified": "2025-08-11 14:47:56.648394",
  "modified_by": "Administrator",
  "module": "Treino",
  "name": "Compra",
