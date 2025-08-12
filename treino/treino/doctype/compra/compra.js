@@ -13,6 +13,7 @@ frappe.ui.form.on("Compra", {
             {fieldname:"tipo_de_pessoa", fieldtype:"Select", options:"Fisica\nJuridica", label:"Tipo de Pessoa"},
             {fieldname:"cpf", fieldtype:"Data", label:"CPF"},
             {fieldname:"cnpj", fieldtype:"Data", label:"CNPJ"}
+            
         ],
         primary_action_label: 'Salvar Cliente',
         primary_action(values) {
