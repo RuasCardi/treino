@@ -16,6 +16,7 @@ def abrir_historico_de_compra(cliente):
     return url
 
 
+
 import frappe
 
 @frappe.whitelist()
