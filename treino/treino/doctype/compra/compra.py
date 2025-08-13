@@ -1,23 +1,23 @@
-# Copyright (c) 2025, Adolfo and contributors
-# For license information, please see license.txt
 import frappe
 from frappe.model.document import Document
 
 class Compra(Document):
-    pass
-
+    def on_submit(self):
+        historico = frappe.new_doc("Historico de Compra")
+        historico.cliente = self.cliente
+        
+        historico.data_da_compra = self.data_da_compra
+        historico.valor_total = self.valor_total
+        historico.total_itens = self.total_de_itens
+        historico.insert(ignore_permissions=True)
+        historico.submit() 
 
 @frappe.whitelist()
 def abrir_historico_de_compra(cliente):
     if not cliente:
         frappe.throw("Cliente não informado.")
-
     url = f"/app/historico-de-compra?cliente={cliente}"
     return url
-
-
-
-import frappe
 
 @frappe.whitelist()
 def gerar_nf(compra_nome):
@@ -26,6 +26,9 @@ def gerar_nf(compra_nome):
     nf = frappe.new_doc("Nota Fiscal")
     nf.update({
         "cliente": compra.cliente,
+        
+        "compra_ref": compra.name,
+        "documento": compra.documento,
         "data_da_compra": compra.data_da_compra,
         "valor_total": compra.valor_total,
         "total_de_itens": compra.total_de_itens,
@@ -36,7 +39,6 @@ def gerar_nf(compra_nome):
     nf.insert(ignore_permissions=True)
     nf.submit()
 
-    # Dispara evento para o usuário atual
     frappe.publish_realtime(
         event="nf_gerada",
         message={
@@ -48,4 +50,3 @@ def gerar_nf(compra_nome):
     )
 
     return nf.name
-
